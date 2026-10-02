@@ -29,13 +29,13 @@ export const logEntries: LogEntry[] = [
     kind: "note",
     text: "I love stories told through statistics, making real-life crafts, creating videos, solving sudoku, and feeding my brain new and interesting things.",
   },
-  { kind: "task", text: "currently making: [something with my hands]" },
-  { kind: "event", text: "last picture: [a place I went]" },
+  { kind: "task", text: "currently making: Fall Crochet Hat" },
+  { kind: "event", text: "last picture: Riverdale Park" },
 ];
 
 export const indexSections: IndexSection[] = [
   { kind: "task", label: "projects", sub: "things I've built", href: "/projects", page: "p. 04" },
   { kind: "event", label: "gallery", sub: "pictures & fragments", href: "/gallery", page: "p. 12" },
-  { kind: "note", label: "blog", sub: "notes from the margins", href: "/blog", page: "p. 20" },
+  { kind: "note", label: "blog", sub: "pins & thoughts", href: "/blog", page: "p. 20" },
   { kind: "important", label: "about", sub: "a little context", href: "/about", page: "p. 32" },
 ];

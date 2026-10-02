@@ -1,31 +1,38 @@
+import { AboutBoard } from "@/components/AboutBoard";
 import { InnerNav } from "@/components/InnerNav";
 import { Spread } from "@/components/Spread";
+import { aboutObjects, intro, quickFacts } from "@/content/about";
 
 export default function AboutPage() {
   return (
     <>
       <InnerNav path={["about"]} />
       <Spread
+        className="spread-about"
         left={
           <>
-            <div className="portrait-placeholder" role="img" aria-label="Placeholder portrait" />
-            <p className="page-eyebrow">a little context</p>
+            <p className="page-eyebrow">a little context · brain dump</p>
             <h1 className="page-title">About</h1>
-            <p className="page-blurb">[Placeholder bio] Write a few warm, specific lines about who you are and what this place holds.</p>
+            <p className="about-intro">{intro}</p>
+            <p className="about-hint">(click around: some things open a note, some flip through photos)</p>
           </>
         }
         right={
-          <div className="about-copy">
-            <h2>Currently</h2>
-            <ul>
-              <li>[What you are learning]</li>
-              <li>[What you are making]</li>
-              <li>[What you are reading or noticing]</li>
-            </ul>
-            <h2>Elsewhere</h2>
-            <p>[Add links to the places you want people to find you.]</p>
-          </div>
+          <section className="quick-facts" aria-labelledby="quick-facts-title">
+            <h2 id="quick-facts-title" className="quick-facts-title">
+              quick facts
+            </h2>
+            <dl>
+              {quickFacts.map((fact) => (
+                <div key={fact.label}>
+                  <dt>{fact.label}:</dt>
+                  <dd>{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
         }
+        overlay={<AboutBoard objects={aboutObjects} />}
       />
     </>
   );
