@@ -1,6 +1,8 @@
 import { InnerNav } from "@/components/InnerNav";
 import { Spread } from "@/components/Spread";
+import { ComingSoon } from "@/components/ComingSoon";
 import { gallery } from "@/content/gallery";
+import { sectionsReady } from "@/content/site";
 
 export default function GalleryPage() {
   return (
@@ -15,16 +17,20 @@ export default function GalleryPage() {
           </>
         }
         right={
-          <div className="gallery-grid">
-            {gallery.map((item) => (
-              <figure className="gallery-item" key={`${item.caption}-${item.date}`}>
-                <div className={`gallery-placeholder ${item.tone}`} aria-label="Placeholder image" role="img" />
-                <figcaption>
-                  {item.caption} <span>{item.date}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          sectionsReady.gallery ? (
+            <div className="gallery-grid">
+              {gallery.map((item) => (
+                <figure className="gallery-item" key={`${item.caption}-${item.date}`}>
+                  <div className={`gallery-placeholder ${item.tone}`} aria-label="Placeholder image" role="img" />
+                  <figcaption>
+                    {item.caption} <span>{item.date}</span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          ) : (
+            <ComingSoon section="the gallery" />
+          )
         }
       />
     </>

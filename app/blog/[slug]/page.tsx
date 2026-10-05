@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { InnerNav } from "@/components/InnerNav";
 import { Spread } from "@/components/Spread";
 import Post from "@/content/blog/first-note.mdx";
+import { sectionsReady } from "@/content/site";
 
 const posts = {
   "first-note": {
@@ -22,7 +23,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const { slug } = await params;
   const post = posts[slug as keyof typeof posts];
 
-  if (!post) {
+  if (!post || !sectionsReady.blog) {
     notFound();
   }
 

@@ -23,7 +23,7 @@ Next.js (App Router) + React + TypeScript + Tailwind. `next/font` for fonts, `ne
 - Keep motion subtle and honor `prefers-reduced-motion`.
 
 ## Conventions
-- Routes: `/`, `/projects`, `/gallery`, `/blog`, `/blog/[slug]`, `/about`.
+- Routes: `/`, `/projects`, `/gallery`, `/blog`, `/blog/[slug]`, `/about`, `/sudoku`.
 - Components in `/components`, one per file, PascalCase.
 - Alt text is required on every image.
 - Placeholder content is fine, but clearly marked, and easy to swap for real content.

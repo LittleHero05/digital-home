@@ -3,16 +3,8 @@ import { CuriosityTracker } from "@/components/CuriosityTracker";
 import { Polaroid } from "@/components/Polaroid";
 import { Signifier } from "@/components/Signifier";
 import { Spread } from "@/components/Spread";
+import { formatNotebookDate } from "@/lib/dates";
 import { greeting, indexSections, logDate, logEntries, polaroid } from "@/content/home";
-
-const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-// "2026-09-23" -> "Wed · 23.09.2026"
-function formatLogDate(isoDate: string) {
-  const [year, month, day] = isoDate.split("-").map(Number);
-  const weekday = WEEKDAYS[new Date(Date.UTC(year, month - 1, day)).getUTCDay()];
-  return `${weekday} · ${String(day).padStart(2, "0")}.${String(month).padStart(2, "0")}.${year}`;
-}
 
 export default function Home() {
   return (
@@ -22,7 +14,7 @@ export default function Home() {
           <span className="washi washi-home" aria-hidden="true" />
           <header className="log-header">
             <time className="log-date" dateTime={logDate}>
-              {formatLogDate(logDate)}
+              {formatNotebookDate(logDate)}
             </time>
             <span className="log-label">today&apos;s log</span>
           </header>

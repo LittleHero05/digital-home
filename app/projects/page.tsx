@@ -1,6 +1,8 @@
 import { Spread } from "@/components/Spread";
 import { InnerNav } from "@/components/InnerNav";
+import { ComingSoon } from "@/components/ComingSoon";
 import { projects } from "@/content/projects";
+import { sectionsReady } from "@/content/site";
 
 export default function ProjectsPage() {
   return (
@@ -15,16 +17,20 @@ export default function ProjectsPage() {
           </>
         }
         right={
-          <div className="note-grid">
-            {projects.map((project, index) => (
-              <article className={`note-card note-card-${index + 1}`} key={project.title}>
-                <p className="note-label">{project.status}</p>
-                <h2>{project.title}</h2>
-                <p>{project.blurb}</p>
-                <p className="note-tags">{project.tags.join(" / ")}</p>
-              </article>
-            ))}
-          </div>
+          sectionsReady.projects ? (
+            <div className="note-grid">
+              {projects.map((project, index) => (
+                <article className={`note-card note-card-${index + 1}`} key={project.title}>
+                  <p className="note-label">{project.status}</p>
+                  <h2>{project.title}</h2>
+                  <p>{project.blurb}</p>
+                  <p className="note-tags">{project.tags.join(" / ")}</p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <ComingSoon section="the projects shelf" />
+          )
         }
       />
     </>
