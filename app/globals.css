@@ -106,50 +106,17 @@ a {
   line-height: 1.45;
 }
 
-.note-grid,
 .gallery-grid {
   display: grid;
   gap: 24px;
 }
 
-.note-card {
-  position: relative;
-  padding: 24px;
-  border: 1px solid var(--blue);
-  background: var(--yellow);
-  box-shadow: 4px 4px 0 rgb(29 63 174 / 18%);
-}
-
-.note-card-2 {
-  transform: rotate(1deg);
-  background: var(--paper);
-}
-
-.note-card-3 {
-  transform: rotate(-1deg);
-}
-
-.note-card h2 {
-  margin: 4px 0 10px;
-  font-size: 1.35rem;
-}
-
-.note-card p {
-  line-height: 1.5;
-}
-
-.note-label,
-.note-tags,
 .post-date,
 .post-tags {
   color: var(--blue);
   font-family: var(--font-source-serif), Georgia, serif;
   font-size: 0.9rem;
   font-style: italic;
-}
-
-.note-tags {
-  margin-bottom: 0;
 }
 
 .gallery-grid {
@@ -1658,4 +1625,219 @@ video.cutout-media {
 @keyframes cloud-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
+}
+
+/* Projects: taped note cards with a print of each project */
+.project-list {
+  display: grid;
+  gap: 52px;
+  margin-top: 44px;
+}
+
+.spread-page-right .project-list {
+  margin-top: 14px;
+}
+
+.project-card {
+  position: relative;
+  padding: 18px 22px 22px;
+  border: 1px solid var(--blue);
+  background: var(--paper);
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--blue) 18%, transparent);
+}
+
+.project-card-1 {
+  background: var(--yellow);
+  rotate: -0.6deg;
+}
+
+.project-card-2 {
+  rotate: 0.8deg;
+}
+
+.project-card-3 {
+  background: var(--yellow);
+  rotate: 0.6deg;
+}
+
+.project-card-4 {
+  rotate: -0.8deg;
+}
+
+.project-tape {
+  position: absolute;
+  z-index: 1;
+  top: -13px;
+  left: 50%;
+  width: 96px;
+  height: 26px;
+  background: var(--yellow);
+  opacity: 0.9;
+  rotate: -3deg;
+  translate: -50% 0;
+}
+
+.project-card-1 .project-tape,
+.project-card-3 .project-tape {
+  background: var(--pink);
+}
+
+.project-print {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 6px solid var(--paper);
+  outline: 1px solid var(--blue);
+  background: var(--dot);
+}
+
+.project-print img {
+  object-fit: cover;
+}
+
+.project-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--blue);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.project-title {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.project-title-highlight {
+  background: linear-gradient(var(--yellow), var(--yellow)) no-repeat 0 85% / 100% 45%;
+}
+
+.project-subtitle {
+  margin: 2px 0 0;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.project-blurb {
+  margin: 10px 0 0;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tech li {
+  padding: 2px 9px;
+  border: 1px solid color-mix(in srgb, var(--blue) 55%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--paper) 70%, transparent);
+  font-size: 0.75rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 14px 0 0;
+}
+
+.project-links a {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* Contact footer: a taped strip under the spread */
+.contact-footer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 36px;
+  width: min(1200px, calc(100% - 32px));
+  margin: 28px auto 48px;
+  padding: 20px 28px;
+  border: 1px solid var(--blue);
+  background: var(--paper);
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--blue) 14%, transparent);
+  rotate: -0.4deg;
+}
+
+.contact-tape {
+  position: absolute;
+  top: -12px;
+  left: 40px;
+  width: 92px;
+  height: 24px;
+  background: var(--yellow);
+  opacity: 0.9;
+  rotate: -4deg;
+}
+
+.contact-title {
+  margin: 0;
+  color: var(--blue);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-links li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.contact-label {
+  font-weight: 700;
+}
+
+.contact-handle {
+  color: var(--blue);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.contact-links a:hover .contact-label,
+.contact-links a:focus-visible .contact-label {
+  background: linear-gradient(var(--yellow), var(--yellow)) no-repeat 0 85% / 100% 45%;
+}
+
+@media (max-width: 1023px) {
+  .contact-footer {
+    width: min(720px, calc(100% - 24px));
+  }
 }

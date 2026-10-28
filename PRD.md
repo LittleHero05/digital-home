@@ -23,6 +23,7 @@ A personal space that feels like flipping through my notebook. A home for my pro
 - Home: the index lists **projects, gallery, blog, about** as real links. Each row has a bujo signifier (● project, ○ gallery, – blog, ★ about) that means the same thing across the site.
 - Inner pages: breadcrumb back to home, plus a compact text nav.
 - Must work by keyboard.
+- A "contact me" footer (GitHub, LinkedIn, email) sits under the spread on the home and projects pages; links live in `/content/contact.ts`.
 
 Until a section has real content, its right page shows a hand-drawn cloud: "still drawing this page". Which sections are finished is set in `/content/site.ts` (currently projects, gallery and blog are not).
 

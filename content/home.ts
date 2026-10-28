@@ -3,6 +3,8 @@ export type SignifierKind = "task" | "event" | "note" | "important";
 export type LogEntry = {
   kind: SignifierKind;
   text: string;
+  // Optional: turns this phrase inside `text` into a link.
+  link?: { text: string; href: string };
 };
 
 export type IndexSection = {
@@ -14,7 +16,7 @@ export type IndexSection = {
 };
 
 // The date shown at the top of the log. Update it when you update the entries.
-export const logDate = "2026-09-23";
+export const logDate = "2026-10-28";
 
 export const greeting = "Hola, I'm Isabella.";
 
@@ -29,7 +31,11 @@ export const logEntries: LogEntry[] = [
     kind: "note",
     text: "I love stories told through statistics, making real-life crafts, creating videos, solving sudoku, and feeding my brain new and interesting things.",
   },
-  { kind: "task", text: "currently making: Fall Crochet Hat" },
+  {
+    kind: "task",
+    text: "currently: building yarn visualizer and crocheting the Sophie Scarf",
+    link: { text: "yarn visualizer", href: "https://yarn-visualizer-five.vercel.app/" },
+  },
   { kind: "event", text: "last picture: Riverdale Park" },
 ];
 

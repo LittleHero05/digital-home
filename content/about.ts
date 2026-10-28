@@ -93,7 +93,7 @@ export const aboutObjects: AboutObject[] = [
       kind: "note",
       title: "Colombia",
       paragraphs: [
-        "I am from Bogotá, Colombia, but I grew up between the outskirts of the capital and the mountains of Boyacá. I spent my summers and weekends milking cows, playing with clay and eating the most delicious food.",
+        "I am from Bogotá, Colombia, but I grew up between the outskirts of the capital and the mountains of Boyacá. I spent my summers and weekends surrounded by cows, horses dogs and chickens, playing with arcilla (clay) and eating the most delicious food.",
         "There is nothing I miss more than my people and a good arepa boyacense.",
       ],
     },
