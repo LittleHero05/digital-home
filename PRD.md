@@ -13,7 +13,7 @@ A personal space that feels like flipping through my notebook. A home for my pro
 |---|---|---|
 | `/` | Home: today's log + index | Left: date, greeting + polaroid, log entries (bujo signifiers), curiosity tracker. Right: "Index" contents list (signifier, section, dotted leader, page number) |
 | `/projects` | Things I've built | Left: title + blurb. Right: project cards (clipped/taped notes) |
-| `/gallery` | Pictures | Left: title + blurb. Right: photo grid (taped-in prints) |
+| `/gallery` | Pictures, as a folder of albums | Left: title + blurb. Right: what's in the folder. Below both pages: a folder with tabs (quick snaps, colombia, travels, canada, collections); each tab is a bento grid of photos and small note cards |
 | `/blog` | Writing index | Left: title + blurb. Right: list of posts |
 | `/blog/[slug]` | A post (text + images) | Left: title, date, tags, cover. Right: body |
 | `/about` | Who I am, as a brain dump | Left: title, short intro. Right: quick facts. Scattered over both pages: clickable photo cut-outs and pixel objects (see below) |
@@ -25,7 +25,7 @@ A personal space that feels like flipping through my notebook. A home for my pro
 - Must work by keyboard.
 - A "contact me" footer (GitHub, LinkedIn, email) sits under the spread on the home and projects pages; links live in `/content/contact.ts`.
 
-Until a section has real content, its right page shows a hand-drawn cloud: "still drawing this page". Which sections are finished is set in `/content/site.ts` (currently projects, gallery and blog are not).
+Until a section has real content, its right page shows a hand-drawn cloud: "still drawing this page". Which sections are finished is set in `/content/site.ts` (currently only blog is not).
 
 ## About: brain dump
 - A spread with a short intro and quick facts written on the pages; everything else lives in objects scattered over both pages (some spill past the edges).
@@ -76,14 +76,14 @@ Pastel yellow is a fill or highlight color only, never text color.
 ## Content model
 - Blog: MDX files in `/content/blog/*.mdx` with frontmatter (`title`, `date`, `tags`, `cover`, `summary`). Images in `/public/blog/`.
 - Projects: typed array in `/content/projects.ts` (`title`, `blurb`, `tags`, `image`, `links`).
-- Gallery: images in `/public/gallery/` plus a typed array in `/content/gallery.ts` (`src`, `alt`, `caption`, `date`).
+- Gallery: images in `/public/images/gallery/` plus albums in `/content/gallery.ts`: each album has sections, each section a list of tiles (photo or video with `alt`, `caption`, `size` tall/wide/big; or a note card). Clicking a photo opens it larger, with prev/next (arrow keys) through the album; Esc or clicking outside closes it.
 - No CMS, no database. Content lives in git.
 
 ## Tech
 Next.js (App Router), React, TypeScript, Tailwind, `next/font` (Source Serif 4), `next/image`, MDX (`gray-matter` + `next-mdx-remote`, or simplest equivalent). Deploy on Vercel.
 
 ## Out of scope for v1
-Dark mode, search, comments, RSS, newsletter, CMS, analytics, page-turn animations, per-project detail pages, gallery lightbox, i18n.
+Dark mode, search, comments, RSS, newsletter, CMS, analytics, page-turn animations, per-project detail pages, i18n.
 
 ## Done means
 - All five sections reachable from the home index and live on Vercel

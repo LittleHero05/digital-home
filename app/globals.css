@@ -106,52 +106,12 @@ a {
   line-height: 1.45;
 }
 
-.gallery-grid {
-  display: grid;
-  gap: 24px;
-}
-
 .post-date,
 .post-tags {
   color: var(--blue);
   font-family: var(--font-source-serif), Georgia, serif;
   font-size: 0.9rem;
   font-style: italic;
-}
-
-.gallery-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.gallery-item {
-  margin: 0;
-  transform: rotate(-1deg);
-}
-
-.gallery-item:nth-child(even) {
-  transform: rotate(1.5deg);
-}
-
-.gallery-placeholder {
-  aspect-ratio: 1 / 1;
-  border: 8px solid var(--paper);
-  outline: 1px solid var(--blue);
-  box-shadow: 3px 3px 0 rgb(29 63 174 / 18%);
-}
-
-.gallery-tone-blue { background: var(--blue); }
-.gallery-tone-yellow { background: var(--yellow); }
-.gallery-tone-ink { background: var(--ink); }
-.gallery-tone-pink { background: var(--pink); }
-
-.gallery-item figcaption {
-  margin-top: 10px;
-  font-family: var(--font-source-serif), Georgia, serif;
-  font-size: 0.9rem;
-}
-
-.gallery-item figcaption span {
-  color: var(--blue);
 }
 
 .post-cover {
@@ -223,10 +183,6 @@ a {
   .compact-nav {
     gap: 9px;
     font-size: 0.75rem;
-  }
-
-  .gallery-grid {
-    gap: 18px;
   }
 }
 
@@ -1840,4 +1796,361 @@ video.cutout-media {
   .contact-footer {
     width: min(720px, calc(100% - 24px));
   }
+}
+
+/* Gallery: a folder of albums, each a bento grid */
+.spread-gallery {
+  min-height: 0;
+}
+
+.gallery-key ol {
+  display: grid;
+  gap: 14px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery-key li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 14px;
+  align-items: baseline;
+  color: var(--blue);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-style: italic;
+}
+
+.gallery-key-number {
+  font-size: 0.9rem;
+}
+
+.gallery-key strong {
+  margin-right: 8px;
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.15rem;
+  font-style: normal;
+}
+
+.gallery-hint {
+  margin: 24px 0 0;
+  color: var(--blue);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  transform: rotate(1deg);
+  transform-origin: left;
+}
+
+.gallery-folder-slot {
+  grid-column: 1 / -1;
+  padding: 8px clamp(16px, 4vw, 56px) 56px;
+}
+
+.folder-tabs {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  /* Overlap the folder's top edge by 1px so the open tab can cover it. */
+  margin-bottom: -1px;
+  padding: 6px 0 0 18px;
+}
+
+.folder-tab {
+  flex-shrink: 0;
+  padding: 9px 22px 10px;
+  border: 1px solid var(--blue);
+  border-radius: 14px 14px 0 0;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.folder-tab:hover {
+  background: color-mix(in srgb, var(--yellow) 50%, var(--paper));
+}
+
+/* The open tab is taller and has no bottom line, so it joins the folder below. */
+.folder-tab.is-active {
+  padding-top: 14px;
+  padding-bottom: 11px;
+  border-bottom: 0;
+  background: color-mix(in srgb, var(--yellow) 70%, var(--paper));
+}
+
+.folder-tab:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.folder-body {
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid var(--blue);
+  border-radius: 0 18px 18px 18px;
+  background: color-mix(in srgb, var(--yellow) 70%, var(--paper));
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--blue) 12%, transparent);
+  container-type: inline-size;
+}
+
+.album-section + .album-section {
+  margin-top: 44px;
+}
+
+.album-section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-bottom: 16px;
+}
+
+.album-section-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.album-section-header span {
+  color: var(--blue);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.album-grid {
+  --gap: 14px;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-auto-rows: calc((100cqw - 11 * var(--gap)) / 12);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.tile-tall {
+  grid-column: span 3;
+  grid-row: span 4;
+}
+
+.tile-wide {
+  grid-column: span 6;
+  grid-row: span 4;
+}
+
+.tile-big {
+  grid-column: span 6;
+  grid-row: span 8;
+}
+
+.album-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.album-photo {
+  padding: 0;
+  border: 0;
+  background: var(--dot);
+  box-shadow: 3px 3px 0 color-mix(in srgb, var(--blue) 14%, transparent);
+  cursor: zoom-in;
+}
+
+.album-photo:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.album-media {
+  object-fit: cover;
+}
+
+video.album-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.album-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  max-width: calc(100% - 20px);
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--blue);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: left;
+}
+
+.album-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  color: var(--ink);
+}
+
+.album-note h3 {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.album-note p {
+  margin: 0;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.note-yellow {
+  background: var(--yellow);
+  outline: 1px solid color-mix(in srgb, var(--blue) 25%, transparent);
+}
+
+.note-pink {
+  background: var(--pink);
+}
+
+.note-blue {
+  background: color-mix(in srgb, var(--blue) 18%, var(--paper));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .album-photo .album-media {
+    transition: scale 300ms ease;
+  }
+
+  .album-photo:hover .album-media {
+    scale: 1.03;
+  }
+}
+
+/* Narrow folders: two columns, tiles keep their photo shape */
+@container (max-width: 700px) {
+  .album-grid {
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tile-tall {
+    grid-column: span 1;
+    grid-row: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .tile-wide {
+    grid-column: span 2;
+    grid-row: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  .tile-big {
+    grid-column: span 2;
+    grid-row: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .album-note.tile-tall,
+  .album-note.tile-wide {
+    aspect-ratio: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Tabs may not all fit on a phone: let the row scroll sideways. */
+  .folder-tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .folder-tab {
+    padding: 8px 14px 9px;
+    font-size: 0.85rem;
+  }
+
+  .folder-tab.is-active {
+    padding-top: 12px;
+    padding-bottom: 10px;
+  }
+}
+
+/* Gallery: the enlarged photo */
+.album-lightbox {
+  width: min(1000px, 92vw);
+  max-width: none;
+  margin: auto;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+
+.album-lightbox::backdrop {
+  background: color-mix(in srgb, var(--ink) 72%, transparent);
+}
+
+.lightbox-figure {
+  margin: 0;
+  padding: 14px 14px 12px;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  background: var(--paper);
+}
+
+.lightbox-media {
+  position: relative;
+  height: min(72vh, 680px);
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--ink);
+}
+
+.lightbox-media .album-media {
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+  color: var(--blue);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-style: italic;
+}
+
+.lightbox-count {
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+.lightbox-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.lightbox-controls button {
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  color: var(--blue);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
 }

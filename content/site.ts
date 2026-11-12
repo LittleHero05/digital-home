@@ -2,6 +2,6 @@
 // instead of their placeholder content. Flip a section to true when its content is real.
 export const sectionsReady = {
   projects: true,
-  gallery: false,
+  gallery: true,
   blog: false,
 };

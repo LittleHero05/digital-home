@@ -2,10 +2,12 @@ import Link from "next/link";
 
 type ComingSoonProps = {
   section: string;
+  title?: string;
+  showBackLink?: boolean;
 };
 
 // A hand-drawn cloud outline for pages that are not finished yet.
-export function ComingSoon({ section }: ComingSoonProps) {
+export function ComingSoon({ section, title = "still drawing this page", showBackLink = true }: ComingSoonProps) {
   return (
     <div className="coming-soon">
       <svg className="coming-soon-cloud" viewBox="0 0 340 220" aria-hidden="true">
@@ -20,12 +22,14 @@ export function ComingSoon({ section }: ComingSoonProps) {
         />
       </svg>
       <div className="coming-soon-text">
-        <p className="coming-soon-title">still drawing this page</p>
+        <p className="coming-soon-title">{title}</p>
         <p className="coming-soon-note">{section} is on its way. come back soon.</p>
       </div>
-      <Link className="coming-soon-link" href="/">
-        ← back to the notebook
-      </Link>
+      {showBackLink && (
+        <Link className="coming-soon-link" href="/">
+          ← back to the notebook
+        </Link>
+      )}
     </div>
   );
 }
