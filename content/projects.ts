@@ -90,4 +90,23 @@ export const projects: Project[] = [
       { label: "github", href: "https://github.com/LittleHero05/bookify" },
     ],
   },
+  {
+    id: "minutesbyisa",
+    title: "minutesbyisa",
+    subtitle: "personal brand & content creation",
+    status: "ongoing · 2026",
+    blurb:
+      "Short videos and hand-drawn carousels about getting into tech, learning for fun and making things by hand: the beginner's version, step by step, in simple lists and how-tos.",
+    tech: ["Instagram Reels", "YouTube", "hand-drawn carousels", "Instagram Insights"],
+    image: {
+      src: "/images/media-kit/cover.jpg",
+      alt: "Cover of a minutesbyisa Reel: Isa in her room, with pictures of Interstellar, a globe and a stack of books.",
+      position: "50% 30%",
+    },
+    links: [
+      { label: "see the media kit", href: "/media-kit" },
+      { label: "instagram", href: "https://www.instagram.com/minutesbyisa/" },
+      { label: "youtube", href: "https://www.youtube.com/@minutesbyisa" },
+    ],
+  },
 ];

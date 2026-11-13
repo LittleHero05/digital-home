@@ -17,6 +17,7 @@ A personal space that feels like flipping through my notebook. A home for my pro
 | `/blog` | Writing index | Left: title + blurb. Right: list of posts |
 | `/blog/[slug]` | A post (text + images) | Left: title, date, tags, cover. Right: body |
 | `/about` | Who I am, as a brain dump | Left: title, short intro. Right: quick facts. Scattered over both pages: clickable photo cut-outs and pixel objects (see below) |
+| `/media-kit` | The minutesbyisa media kit, linked from its project card | Left: name, tagline, photo, download-PDF button, about, numbers, audience. Right: best Reels (link to Instagram), what I make, work with me (rates), contact |
 | `/sudoku` | Today's puzzle | Left: title, stats (time / filled / mistakes), number pad, tools, mini curiosity tracker. Right: the 9×9 grid |
 
 ## Navigation
@@ -75,7 +76,8 @@ Pastel yellow is a fill or highlight color only, never text color.
 
 ## Content model
 - Blog: MDX files in `/content/blog/*.mdx` with frontmatter (`title`, `date`, `tags`, `cover`, `summary`). Images in `/public/blog/`.
-- Projects: typed array in `/content/projects.ts` (`title`, `blurb`, `tags`, `image`, `links`).
+- Projects: typed array in `/content/projects.ts` (`title`, `blurb`, `tags`, `image`, `links`). Links to pages on this site open in place; other links open in a new tab.
+- Media kit: `/content/mediaKit.ts` (numbers from Instagram Insights), images in `/public/images/media-kit/`, PDF in `/public/files/minutesbyisa-media-kit.pdf`. Update both the content file and the PDF when the numbers change.
 - Gallery: images in `/public/images/gallery/` plus albums in `/content/gallery.ts`: each album has sections, each section a list of tiles (photo or video with `alt`, `caption`, `size` tall/wide/big; or a note card). Clicking a photo opens it larger, with prev/next (arrow keys) through the album; Esc or clicking outside closes it.
 - No CMS, no database. Content lives in git.
 

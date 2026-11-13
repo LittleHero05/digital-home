@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Signifier } from "@/components/Signifier";
 import type { Project } from "@/content/projects";
 
@@ -39,11 +40,18 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       </ul>
 
       <p className="project-links">
-        {project.links.map((link) => (
-          <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-            {link.label} →
-          </a>
-        ))}
+        {project.links.map((link) =>
+          // Pages on this site open in place; other sites and files open in a new tab.
+          link.href.startsWith("/") && !link.href.startsWith("/files/") ? (
+            <Link key={link.href} href={link.href}>
+              {link.label} →
+            </Link>
+          ) : (
+            <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+              {link.label} →
+            </a>
+          ),
+        )}
       </p>
     </article>
   );
