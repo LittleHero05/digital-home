@@ -99,9 +99,9 @@ export const projects: Project[] = [
       "Short videos and hand-drawn carousels about getting into tech, learning for fun and making things by hand: the beginner's version, step by step, in simple lists and how-tos.",
     tech: ["Instagram Reels", "YouTube", "hand-drawn carousels", "Instagram Insights"],
     image: {
-      src: "/images/media-kit/cover.jpg",
-      alt: "Cover of a minutesbyisa Reel: Isa in her room, with pictures of Interstellar, a globe and a stack of books.",
-      position: "50% 30%",
+      src: "/images/projects/minutesbyisa-reels.webp",
+      alt: "A grid of six minutesbyisa Reels: starting a junk journal, apps for a better online experience, wildly different activities to try, keeping your brain healthy, fixing a scrolling addiction, and a book review.",
+      position: "50% 0%",
     },
     links: [
       { label: "see the media kit", href: "/media-kit" },
