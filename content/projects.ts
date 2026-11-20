@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     id: "outlyne",
     title: "Outlyne",
-    status: "in progress · 2026",
+    status: "launched · 2026",
     blurb:
       "Running-app overlays, but for everything else. Pick an activity (reading, a workout, a habit, a recipe), fill in the details, and get a clean overlay to share in your story.",
     tech: ["Next.js", "TypeScript", "Tailwind", "shadcn/ui", "Supabase", "html-to-image"],
@@ -34,7 +34,7 @@ export const projects: Project[] = [
       position: "50% 38%",
     },
     links: [
-      { label: "visit the site", href: "https://outlyne-app-v9en.vercel.app" },
+      { label: "visit the site", href: "https://outlyneapp.com" },
       { label: "github", href: "https://github.com/LittleHero05/outlyne-app" },
     ],
   },

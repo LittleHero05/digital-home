@@ -61,14 +61,14 @@ export const mediaKit = {
     {
       views: "7.0k",
       title: "3 simple things to build your own brain gym",
-      stats: "451 saves, 221 shares, 6.0k reached",
+      stats: "452 saves, 222 shares, 6.0k reached",
       href: "https://www.instagram.com/reel/Dd6rHA0RX3n/",
       tone: "yellow",
     },
     {
-      views: "5.4k",
+      views: "6.1k",
       title: "3 things you need for your brain stack",
-      stats: "106 saves, 62 shares, 4.4k reached",
+      stats: "116 saves, 66 shares, 4.9k reached",
       href: "https://www.instagram.com/reel/De2ROtiMSn9/",
       tone: "blue",
     },
@@ -87,7 +87,7 @@ export const mediaKit = {
     cover?: { src: string; alt: string };
     tone: Tone;
   }[],
-  topReelsSource: "Source: Instagram Insights, lifetime numbers as of November 13, 2026.",
+  topReelsSource: "Source: Instagram Insights, lifetime numbers, November 2026.",
 
   makes: [
     { title: "creative tech", text: "AI tools, small apps and fast builds, shown start to finish." },
@@ -96,13 +96,13 @@ export const mediaKit = {
   ],
 
   offers: [
-    { title: "Reel", text: "A demo or list-style video featuring your product.", price: "from $75" },
-    { title: "hand-drawn carousel", text: "A step-by-step carousel in my illustrated style.", price: "from $60" },
-    { title: "YouTube", text: "A 60-second integration inside one of my videos.", price: "from $100" },
-    { title: "package", text: "One Reel plus one carousel.", price: "from $120" },
+    { title: "Reel", text: "A demo or list-style video featuring your product.", price: "from $175" },
+    { title: "hand-drawn carousel", text: "A step-by-step carousel in my illustrated style.", price: "from $125" },
+    { title: "YouTube", text: "A 60-second integration inside one of my videos.", price: "from $150" },
+    { title: "package", text: "One Reel plus one carousel.", price: "from $275" },
   ],
   offersNote:
-    "Best fit: AI and dev tools, creative tools, learning products, books, podcasts and craft brands. I only work with products I would use myself. Prices in CAD. Usage rights and extra revisions are quoted separately.",
+    "Best fit: AI and dev tools, creative tools, learning products, books, podcasts and craft brands. I only work with products I would use myself. Prices in CAD.",
 
   location: "Toronto, Canada",
   contact: [

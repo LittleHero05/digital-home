@@ -16,7 +16,8 @@ export type IndexSection = {
 };
 
 // The date shown at the top of the log. Update it when you update the entries.
-export const logDate = "2026-10-28";
+// The log date is the day the site was built (deployed), in Toronto time.
+export const logDate = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Toronto" }).format(new Date());
 
 export const greeting = "Hola, I'm Isabella.";
 
@@ -44,4 +45,5 @@ export const indexSections: IndexSection[] = [
   { kind: "event", label: "gallery", sub: "pictures & fragments", href: "/gallery", page: "p. 12" },
   { kind: "note", label: "blog", sub: "pins & thoughts", href: "/blog", page: "p. 20" },
   { kind: "important", label: "about", sub: "a little context", href: "/about", page: "p. 32" },
+  { kind: "task", label: "media kit", sub: "minutesbyisa, for brands", href: "/media-kit", page: "p. 40" },
 ];

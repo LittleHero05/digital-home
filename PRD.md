@@ -21,7 +21,7 @@ A personal space that feels like flipping through my notebook. A home for my pro
 | `/sudoku` | Today's puzzle | Left: title, stats (time / filled / mistakes), number pad, tools, mini curiosity tracker. Right: the 9×9 grid |
 
 ## Navigation
-- Home: the index lists **projects, gallery, blog, about** as real links. Each row has a bujo signifier (● project, ○ gallery, – blog, ★ about) that means the same thing across the site.
+- Home: the index lists **projects, gallery, blog, about, media kit** as real links. The log date is the day the site was last built. Each row has a bujo signifier (● project, ○ gallery, – blog, ★ about) that means the same thing across the site.
 - Inner pages: breadcrumb back to home, plus a compact text nav.
 - Must work by keyboard.
 - A "contact me" footer (GitHub, LinkedIn, email) sits under the spread on the home and projects pages; links live in `/content/contact.ts`.
