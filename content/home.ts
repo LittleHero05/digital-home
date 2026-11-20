@@ -45,5 +45,4 @@ export const indexSections: IndexSection[] = [
   { kind: "event", label: "gallery", sub: "pictures & fragments", href: "/gallery", page: "p. 12" },
   { kind: "note", label: "blog", sub: "pins & thoughts", href: "/blog", page: "p. 20" },
   { kind: "important", label: "about", sub: "a little context", href: "/about", page: "p. 32" },
-  { kind: "task", label: "media kit", sub: "minutesbyisa, for brands", href: "/media-kit", page: "p. 40" },
 ];
