@@ -106,75 +106,6 @@ a {
   line-height: 1.45;
 }
 
-.post-date,
-.post-tags {
-  color: var(--blue);
-  font-family: var(--font-source-serif), Georgia, serif;
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-.post-cover {
-  width: min(100%, 260px);
-  aspect-ratio: 4 / 5;
-  margin-bottom: 32px;
-  border: 1px solid var(--blue);
-  background: var(--yellow);
-  box-shadow: 8px 8px 0 rgb(29 63 174 / 14%);
-}
-
-.post-list {
-  display: grid;
-  gap: 20px;
-}
-
-.post-link {
-  display: grid;
-  gap: 6px;
-  padding: 18px 0;
-  border-top: 1px solid var(--blue);
-  text-decoration: none;
-}
-
-.post-link:last-child {
-  border-bottom: 1px solid var(--blue);
-}
-
-.post-title {
-  font-size: 1.45rem;
-  font-weight: 700;
-}
-
-.post-summary {
-  color: var(--ink);
-  font-family: var(--font-source-serif), Georgia, serif;
-}
-
-.post-cover {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-top: 36px;
-  background: var(--blue);
-}
-
-.prose {
-  max-width: 620px;
-  font-family: var(--font-source-serif), Georgia, serif;
-  font-size: 1.15rem;
-  line-height: 1.7;
-}
-
-.prose h1,
-.prose h2 {
-  color: var(--ink);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.1;
-}
-
-.prose h1 {
-  display: none;
-}
-
 @media (max-width: 600px) {
   .inner-header {
     width: min(100% - 24px, 720px);
@@ -2543,5 +2474,161 @@ video.album-media {
   .kit-grid-2,
   .kit-grid-reels {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Blog: Substack posts as taped note cards, plus a subscribe card */
+.spread-blog {
+  min-height: 0;
+}
+
+.subscribe-card {
+  position: relative;
+  max-width: 400px;
+  margin-top: 44px;
+  padding: 20px 22px 18px;
+  border: 1px solid var(--blue);
+  background: var(--yellow);
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--blue) 18%, transparent);
+  rotate: -0.8deg;
+}
+
+.subscribe-tape {
+  position: absolute;
+  top: -12px;
+  left: 28px;
+  width: 80px;
+  height: 22px;
+  background: var(--pink);
+  opacity: 0.9;
+  rotate: -4deg;
+}
+
+.subscribe-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.subscribe-card p {
+  margin: 6px 0 12px;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.subscribe-embed {
+  display: block;
+  width: 100%;
+  height: 150px;
+  border: 1px solid color-mix(in srgb, var(--blue) 40%, transparent);
+  background: var(--paper);
+}
+
+.post-list {
+  display: grid;
+  gap: 44px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-card a {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  padding: 18px 22px 20px;
+  border: 1px solid var(--blue);
+  background: var(--paper);
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--blue) 18%, transparent);
+  color: var(--ink);
+  text-decoration: none;
+  transition: translate 150ms ease, box-shadow 150ms ease;
+}
+
+.post-card-1 a { rotate: 0.6deg; }
+.post-card-2 a { background: var(--yellow); rotate: -0.6deg; }
+.post-card-3 a { rotate: -0.3deg; }
+
+.post-card a:hover,
+.post-card a:focus-visible {
+  translate: -2px -2px;
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--blue) 26%, transparent);
+}
+
+.post-tape {
+  position: absolute;
+  z-index: 1;
+  top: -13px;
+  left: 50%;
+  width: 90px;
+  height: 24px;
+  background: var(--yellow);
+  opacity: 0.9;
+  translate: -50% 0;
+  rotate: 3deg;
+}
+
+.post-card-2 .post-tape {
+  background: var(--pink);
+}
+
+.post-print {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 6px solid var(--paper);
+  outline: 1px solid var(--blue);
+  background: var(--dot);
+}
+
+.post-print img {
+  object-fit: cover;
+}
+
+.post-date {
+  color: var(--blue);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.post-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.post-summary {
+  font-family: var(--font-source-serif), Georgia, serif;
+  line-height: 1.5;
+}
+
+.post-read {
+  margin-top: 6px;
+  color: var(--blue);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.post-more,
+.post-fallback {
+  margin: 36px 0 0;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-style: italic;
+}
+
+.post-more a,
+.post-fallback a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-card a {
+    transition: none;
   }
 }

@@ -3,5 +3,5 @@
 export const sectionsReady = {
   projects: true,
   gallery: true,
-  blog: false,
+  blog: true,
 };

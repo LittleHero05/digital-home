@@ -4,7 +4,7 @@
 Personal website ("digital home"). Read `PRD.md` first; it is the source of truth for scope, pages, and style.
 
 ## Stack
-Next.js (App Router) + React + TypeScript + Tailwind. `next/font` for fonts, `next/image` for images. MDX for blog posts. Deployed on Vercel.
+Next.js (App Router) + React + TypeScript + Tailwind. `next/font` for fonts, `next/image` for images. Blog posts come from Substack (RSS). Deployed on Vercel.
 
 ## Principles
 - **Bare bones first.** Build only what `PRD.md` lists. Do not add features from the "Out of scope" list.
@@ -23,7 +23,7 @@ Next.js (App Router) + React + TypeScript + Tailwind. `next/font` for fonts, `ne
 - Keep motion subtle and honor `prefers-reduced-motion`.
 
 ## Conventions
-- Routes: `/`, `/projects`, `/gallery`, `/blog`, `/blog/[slug]`, `/about`, `/sudoku`, `/media-kit`.
+- Routes: `/`, `/projects`, `/gallery`, `/blog`, `/about`, `/sudoku`, `/media-kit`.
 - Components in `/components`, one per file, PascalCase.
 - Alt text is required on every image.
 - Placeholder content is fine, but clearly marked, and easy to swap for real content.
